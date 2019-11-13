@@ -29,11 +29,6 @@ function getPlaces(street, city, state) {
   //finds 10 places and stores an array of points
   var address = encodeURIComponent(street + "," + " " + city + "," + " " + state);
   console.log(address);
-  var bedrooms = 4;
-  var bathrooms = 2;
-  var propertyType = "Single%20Family";
-  var squareFootage = 1600;
-  var results = 10;
 
   var settings = {
     "async": true,
