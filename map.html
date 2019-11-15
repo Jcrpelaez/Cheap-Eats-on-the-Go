@@ -1,25 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple Map</title>
-    <meta name="viewport" content="initial-scale=1.0" />
-    <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="assets/map.css" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="assets/map.css" />
   </head>
   <body>
-    <div class="container">
-      <div id="map"></div>
+    <h3>My Google Maps</h3>
+    <!--The div element for the map -->
+    <div class="container"><div id="map"></div></div>
+    <script src="assets/js/map.js"></script>
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDT0tEQFRtwcFBFnSg5puo_8dB9jxn8OY8&callback=initMap"
       async
       defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDT0tEQFRtwcFBFnSg5puo_8dB9jxn8OY8&callback=initMap"
     ></script>
-    <script src="assets/js/map.js"></script>
   </body>
 </html>
