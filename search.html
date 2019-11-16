@@ -1,76 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Project 1</title>
-        <!-- Added link to the jQuery Library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-        <!-- Added link to the .js file -->
-        <script src="app.js"></script>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 1</title>
 
-        <!-- Added a link to Bootstrap-->
-        <link
-            rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        />
-    </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+    <script src="app.js"></script>
 
-    <body>
-        <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <h1 class="text-center">Poor and Homeless</h1>
-                </nav>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
 
-            <div class="row" id="myDiv">
-                <div class="col-lg-6">
-                    <div class="panel-body">
-                        <h1>Enter where you want to live!</h1>
-                        <form>
-                            <div class="form-group">
-                                <label for="text">Street Address: </label>
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="address"
-                                />
-                            </div>
-                            <div class="form-group">
-                                <label for="text">City: </label>
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="city"
-                                />
-                            </div>
-                            <div class="form-group">
-                                <label for="text">State: </label>
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="state"
-                                />
-                            </div>
-                            <div class="form-group">
-                                <label for="text">Zip Code:</label>
-                                <input
-                                    class="form-control"
-                                    id="zip"
-                                ></input>
-                            </div>
-                            <button
-                                type="submit"
-                                class="btn btn-default"
-                                id="findPlaces"
-                            >
-                                Submit
-                            </button>
-                        </form>
-                    </div>
-                    </div>
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            padding-right: 150px;
+        }
+
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 10px;
+            padding-right: 150px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <h1 class="text-center">Poor and Homeless</h1>
+        </nav>
+
+        <div class="row" id="myDiv">
+            <div class="col-lg-6">
+                <div class="panel-body">
+                    <h1>Enter where you want to live!</h1>
+                    <form id="demoForm">
+                        <div class="form-group">
+                            <label for="text">Street Address: </label>
+                            <input type="text" name="address" class="form-control" id="address" />
+                            <div class="badge badge-danger text-wrap" id="errorAddress" style="display: none;">Entry
+                                required</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="text">City: </label>
+                            <input type="text" class="form-control" id="city" />
+                            <div class="badge badge-danger text-wrap" id="errorCity" style="display: none;">Entry
+                                required</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="text">State: </label>
+                            <input type="text" class="form-control" id="state" />
+                            <div class="badge badge-danger text-wrap" id="errorState" style="display: none;">Entry
+                                required</div>
+                        </div>
+                        <button type="submit" class="btn btn-default" id="findPlaces">
+                            Submit
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
-    </body>
+        
+           <!--The div element for the map -->
+    <div class="container"><div id="map"></div></div>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDT0tEQFRtwcFBFnSg5puo_8dB9jxn8OY8&callback=initMap"
+    ></script>
+        
+
+        <div id="results">
+
+        </div>
+
+    </div>
+
+</body>
+
 </html>
