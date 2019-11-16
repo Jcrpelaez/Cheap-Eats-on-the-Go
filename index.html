@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="assets/map.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    
+  </head>
+  <body>
+    <h1 class="row d-flex justify-content-center">Reinvent Rent</h1>
+    <!--The div element for the map -->
+    <div class="container"><div id="map"></div></div>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDT0tEQFRtwcFBFnSg5puo_8dB9jxn8OY8&callback=initMap"
+    ></script>
+    <div class="row d-flex justify-content-center" id="myDiv">
+        <div class="col-lg-6">
+            <div class="panel-body" id="formDiv">
+                <h3>Enter where you want to live!</h3>
+                <form id="demoForm">
+                    <div class="form-group">
+                        <label for="text">Street Address: </label>
+                        <input type="text" name="address" class="form-control" id="address" />
+                        <div class="badge badge-danger text-wrap" id="errorAddress" style="display: none;">Entry
+                            required</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="text">City: </label>
+                        <input type="text" class="form-control" id="city" />
+                        <div class="badge badge-danger text-wrap" id="errorCity" style="display: none;">Entry
+                            required</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="text">State: </label>
+                        <input type="text" class="form-control" id="state" />
+                        <div class="badge badge-danger text-wrap" id="errorState" style="display: none;">Entry
+                            required</div>
+                    </div>
+                    <button type="submit" class="btn btn-default" id="findPlaces">
+                        Submit
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div id="results">
+
+          </div>
+    </div>
+    
+  </body>
+</html>
