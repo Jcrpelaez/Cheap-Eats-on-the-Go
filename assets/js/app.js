@@ -132,7 +132,7 @@ function initMap() {
 
       // $("#results").append("<table><thead><tr><th>Address</th><th>Bedroom</th><th>Bathroom</th><th>Price</th></tr></thead><tbody>");
       $("#results").append("<tbody>");
-
+      $("#results").append("<tr><td>Address</td><td>Bedrooms</td><td>Bathrooms</td><td>Price</td></tr>");
       for (x = 0; x < response.listings.length; x++) {
         //console.log("test");
 
